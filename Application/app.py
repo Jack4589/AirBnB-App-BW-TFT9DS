@@ -1,6 +1,6 @@
 """An App that recieves multiple input values and returns a single value"""
 from flask import Flask, render_template, request
-from simple_model import model_lr
+from simple_model import *
 
 app = Flask(__name__)
 
@@ -12,9 +12,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/user_submit")
-def model():
-    prediction = model_lr()
+@app.route("/user_submit", methods=['POST'])
+def recommended_price():
+    """
+    Returns recommended price given user-inputed parameters.
+    """
+    user_input = request.values['user_input']
+    prediction = model_lr(user_input)
     return "It should be around {}".format(prediction)
 
    
