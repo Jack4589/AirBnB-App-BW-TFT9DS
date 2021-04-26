@@ -1,8 +1,6 @@
-"""Example of a one file flask application that uses requests to access an API"""
-from os import getenv
-from datetime import datetime as dt
-import requests
-from flask import Flask, render_template
+"""An App that recieves multiple input values and returns a single value"""
+from flask import Flask, render_template, request
+
 
 app = Flask(__name__)
 
@@ -14,14 +12,10 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/update")
+@app.route("/user_submit")
 def update():
    return redirect("/")
 
-
-@app.route("/reset")
-def reset():
-    return redirect("/")
-
+   
 if __name__ == "__main__":
     app.run(debug=True)
