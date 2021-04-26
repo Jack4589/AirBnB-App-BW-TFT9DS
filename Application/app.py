@@ -7,12 +7,12 @@ app = Flask(__name__)
 
 
 # some routes
-@app.route("/", methods=['POST'])
+@app.route("/")
 def index():
     return render_template('index.html')
 
 
-@app.route("/user_submit")
+@app.route("/user_submit", methods=['POST'])
 def recommended_price():
     """
     Returns recommended price given user-inputed parameters.
