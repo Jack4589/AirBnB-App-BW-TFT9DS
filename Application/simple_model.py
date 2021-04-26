@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
-data_path - 'https://github.com/Jack4589/AirBnB-App-BW-TFT9DS/blob/main/Data/listings.csv'
+data_path = 'https://github.com/Jack4589/AirBnB-App-BW-TFT9DS/raw/main/Data/listings.csv'
     
 nyc_simple = pd.read_csv(data_path)
 
