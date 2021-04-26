@@ -1,8 +1,6 @@
-"""Example of a one file flask application that uses requests to access an API"""
-from os import getenv
-from datetime import datetime as dt
-import requests
-from flask import Flask, redirect
+"""An App that recieves multiple input values and returns a single value"""
+from flask import Flask, render_template, request
+from simple_model import model_lr
 
 app = Flask(__name__)
 
@@ -10,17 +8,15 @@ app = Flask(__name__)
 
 # some routes
 @app.route("/")
-def root():
-    astro_data = Astros.query.all()[0]
-    return 'TODO'
+def index():
+    return render_template('index.html')
 
 
-@app.route("/update")
-def update():
-   return redirect("/")
+@app.route("/user_submit")
+def model():
+    prediction = model_lr()
+    return "It should be around {}".format(prediction)
 
-
-@app.route("/reset")
-def reset():
-    return redirect("/")
-
+   
+if __name__ == "__main__":
+    app.run(debug=True)
