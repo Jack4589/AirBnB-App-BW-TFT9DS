@@ -17,7 +17,7 @@ def recommended_price():
     """
     Returns recommended price given user-inputed parameters.
     """
-    user_input = request.values['user_input']
+    user_input = request.values['feature_checkbox']
     prediction = model_lr(user_input)
     return "It should be around {}".format(prediction)
 
