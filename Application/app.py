@@ -14,8 +14,9 @@ def index():
 
 @app.route("/user_submit")
 def model():
-    prediction = model_lr()
-    return "It should be around {}".format(prediction)
+    user_input = availability_365
+    prediction = model_lr(user_input)
+    return "It should be around ${}".format(prediction)
 
    
 if __name__ == "__main__":

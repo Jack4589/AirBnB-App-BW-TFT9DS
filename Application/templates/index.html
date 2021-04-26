@@ -15,11 +15,11 @@
 <body>
   AirBnB Price App
   <form id='user_input' autocomplete="off" method="post" action="/user_submit">
-    <div class="w3-row-padding" style="margin:0 -16px;">
-      <label class="checkbox-inline">
-        <input type="checkbox" value="availability_365" name="feature_checkbox">Availabile Whole year round?
-      <label class="checkbox-inline">
-        </div>
+    <div class="w3-row-padding" style="margin:8px 16px;">
+      <div class="w3-half w3-margin-bottom">
+        <label>Availability 365</label>
+        <input class="w3-input w3-border" type="number" name="availability_365" min="1" max="365" step="1" value="0">
+      </div>
     <button class="w3-button w3-dark-grey" type="SUBMIT"><i class="fa fa-search w3-margin-right"></i> Estimate Price</button>
   </form>
 </body>
