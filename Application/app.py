@@ -6,7 +6,13 @@ app = Flask(__name__)
 
 
 
-# some routes
+# App routess
+# TODO Landing home page and app introduction
+# @app.route("/")
+# def home():
+#     return render_template('home.html')
+
+
 @app.route("/")
 def index():
     return render_template('index.html')
@@ -20,7 +26,7 @@ def recommended_price():
     avail_365 = int(request.values['availability_365'])
     min_nights = int(request.values['minimum_nights'])
     user_input = [avail_365, min_nights]
-    
+
     prediction = predict_price(user_input)
     return "It should be around {}".format(prediction)
 
