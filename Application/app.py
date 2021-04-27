@@ -1,7 +1,7 @@
 """An App that recieves multiple input values and returns a single value"""
 from flask import Flask, render_template, request
-from simple_model import *
 import pandas as pd
+from .simple_model import *
 
 app = Flask(__name__)
 
