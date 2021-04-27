@@ -17,10 +17,14 @@ def recommended_price():
     """
     Returns recommended price given user-inputed parameters.
     """
-    user_input = request.values['feature_checkbox']
-    prediction = model_lr(user_input)
+    avail_365 = int(request.values['availability_365'])
+    min_nights = int(request.values['minimum_nights'])
+    user_input = [avail_365, min_nights]
+    
+    prediction = predict_price(user_input)
     return "It should be around {}".format(prediction)
 
    
 if __name__ == "__main__":
     app.run(debug=True)
+    
