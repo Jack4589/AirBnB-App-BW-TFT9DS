@@ -1,6 +1,7 @@
 """An App that recieves multiple input values and returns a single value"""
 from flask import Flask, render_template, request
 from simple_model import *
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -23,12 +24,16 @@ def recommended_price():
     """
     Returns recommended price given user-inputed parameters.
     """
-    avail_365 = int(request.values['availability_365'])
-    min_nights = int(request.values['minimum_nights'])
-    user_input = [avail_365, min_nights]
+    availability_365 = int(request.values['availability_365'])
+    minimum_nights = int(request.values['minimum_nights'])
+    #room_type =  str(request.values['room_type'])
+    bathrooms = int(request.values['bathrooms'])
+    bedrooms = int(request.values['bedrooms'])
+    beds = int(request.values['beds'])
+    user_input = [availability_365, minimum_nights, bathrooms, bedrooms, beds]
 
     prediction = predict_price(user_input)
-    return "It should be around {}".format(prediction)
+    return "It should be around ${}".format(prediction)
 
    
 if __name__ == "__main__":
