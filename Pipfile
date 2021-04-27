@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 pandas = "*"
 numpy = "*"
 sklearn = "*"
+gunicorn = "*"
 
 [dev-packages]
 
