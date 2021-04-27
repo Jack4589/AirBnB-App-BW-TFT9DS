@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block body %}
+
+
 <!doctype html>
 
 <html lang="en">
@@ -13,7 +17,6 @@
 </head>
 
 <body>
-  AirBnB Price App
   <form id='user_input' autocomplete="off" method="post" action="/user_submit">
     <div class="w3-row-padding" style="margin:0 16px;">
       <div class="w3-half w3-margin-bottom">
@@ -53,4 +56,4 @@
     <button class="w3-button w3-dark-grey" type="SUBMIT"><i class="fa fa-search w3-margin-right"></i> Estimate Price</button>
   </form>
 </body>
-</html>
+{% endblock %}
