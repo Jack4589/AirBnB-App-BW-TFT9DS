@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>AirBnB Price App</title>
+  <meta name="description" content="AirBnB Price App">
+  <meta name="author" content="SitePoint">
+
+  
+<body>
+  <form id='user_input' autocomplete="off" method="post" action="/user_submit">
+    <div class="w3-row-padding" style="margin:0 16px;">
+      <div class="w3-half w3-margin-bottom">
+        <label>Bedrooms</label>
+        <input class="w3-input w3-border" type="number" name="bedrooms" min="0" max="16" step="1" value="0" required>
+      </div>
+    <div class="w3-row-padding" style="margin:0 0px;">
+        <div class="w3-half w3-margin-bottom">
+          <label>Beds</label>
+          <input class="w3-input w3-border" type="number" name="beds" min="0" max="16" step="1" value="0" required>
+      </div>
+    <div class="w3-row-padding" style="margin:0 0px;">
+        <div class="w3-half w3-margin-bottom">
+          <label>Bathrooms</label>
+          <input class="w3-input w3-border" type="number" name="bathrooms" min="0" max="16" step="1" value="0" required>
+       </div>
+       <div class="w3-row-padding" style="margin:0 0px;">
+        <div class="w3-half w3-margin-bottom">
+          <label>Minimum Nights</label>
+          <input class="w3-input w3-border" type="number" name="minimum_nights" min="0" max="365" step="1" value="0" required>
+       </div>
+       <div class="w3-row-padding" style="margin:0 0px;">
+        <div class="w3-half w3-margin-bottom">
+          <label>Days Available in a Year</label>
+          <input class="w3-input w3-border" type="number" name="availability_365" min="0" max="365" step="1" value="0" required>
+       </div>
+    <div class="w3-row-padding" style="margin:8px 0px;">
+        <div class="w3-half w3-margin-bottom">
+            <label for="room_type">Room Type</label>
+            <select class="w3-input w3-border" id="room_type" name="room_type">
+                <option value="Entire home/apt">Entire home/apt</option>
+                <option value="Private room">Private room</option>
+                <option value="Shared room">Shared room</option>
+                <option value="Hotel room">Hotel room</option>
+            </select><br>
+        </div>
+    <button class="w3-button w3-dark-grey" type="SUBMIT"><i class="fa fa-search w3-margin-right"></i> Estimate Price</button>
+  </form>
+</body>
+
+{% endblock %}
